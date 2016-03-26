@@ -44,38 +44,6 @@
         android:text="Help" />
 </LinearLayout>
 
-<!--     <LinearLayout  -->
-<!--         android:orientation="vertical" -->
-<!--         android:layout_width="wrap_content" -->
-<!--         android:layout_height="wrap_content" -->
-<!--         android:padding="10dp" -->
-<!--         > -->
-
-<!--         <Button  -->
-<!--                android:id="@+id/btnGplus" -->
-<!--                android:layout_width="match_parent" -->
-<!--             android:layout_height="wrap_content" -->
-<!--             android:padding="10dp" -->
-<!--                android:layout_margin="4dp" -->
-<!--                android:text="Sign in with Google+" -->
-<!--            /> -->
-<!--         <Button  -->
-<!--                android:id="@+id/btnFb" -->
-<!--                android:layout_width="match_parent" -->
-<!--             android:layout_height="wrap_content" -->
-<!--             android:padding="10dp" -->
-<!--                android:layout_margin="4dp" -->
-<!--                android:text="Sign in with Google+" -->
-<!--            /> -->
-<!--         <Button  -->
-<!--                android:id="@+id/btnTwitter" -->
-<!--                android:layout_width="match_parent" -->
-<!--             android:layout_height="wrap_content" -->
-<!--             android:padding="10dp" -->
-<!--                android:layout_margin="4dp" -->
-<!--                android:text="Sign in with Google+" -->
-<!--            /> -->
-<!--         </LinearLayout> -->
 
 
 
