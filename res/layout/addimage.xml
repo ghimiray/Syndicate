@@ -17,6 +17,19 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:src="@drawable/abc"/>
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:ems="10"
+            android:inputType="textPersonName" >
+
+            <requestFocus />
+        </EditText>
+
     </RelativeLayout>
 
     <RelativeLayout
@@ -28,11 +41,20 @@
         >
         
         <Button
+            android:id="@+id/btnMatch"
+            android:layout_width="100dp"
+            android:layout_height="140dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="Match" />
+
+        <Button
             android:id="@+id/btnCamera"
             android:layout_width="100dp"
             android:layout_height="140dp"
             android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
+            android:layout_marginRight="27dp"
+            android:layout_toLeftOf="@+id/btnMatch"
             android:text="Camera" />
             
   </RelativeLayout>>

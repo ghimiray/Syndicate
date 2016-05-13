@@ -14,13 +14,17 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.RelativeLayout.LayoutParams;
 
 
 
 public class recogniser extends Activity{
-	Button b1;
+	Button b1,b2;
 	   ImageView iv;
+	   EditText e1;
 	
 	
 	
@@ -29,13 +33,20 @@ public class recogniser extends Activity{
         super.onCreate(savedInstanceState);
          this.setContentView(R.layout.addimage);
          b1=(Button)findViewById(R.id.btnCamera);
+         b2=(Button)findViewById(R.id.btnMatch);
          iv=(ImageView)findViewById(R.id.imageView);
+         b2.setVisibility(View.INVISIBLE);
+         e1=(EditText)findViewById(R.id.editText);
+ 		e1.setVisibility(View.INVISIBLE);
+         
          
          b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+            	
                Intent intent = new Intent(android.provider.MediaStore.ACTION_IMAGE_CAPTURE);
                startActivityForResult(intent, 0);
+               
             }
          });
         
@@ -43,11 +54,23 @@ public class recogniser extends Activity{
 	
 	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 	      
-	      super.onActivityResult(requestCode, resultCode, data);
+if (data!= null){
+		super.onActivityResult(requestCode, resultCode, data);
 	      
 	      
 	      Bitmap bp = (Bitmap) data.getExtras().get("data");
+	      
 	      iv.setImageBitmap(bp);
+	      b2.setVisibility(View.VISIBLE);
+	     
+	      RelativeLayout.LayoutParams params = (RelativeLayout.LayoutParams)b1.getLayoutParams();
+	      params.addRule(RelativeLayout.ALIGN_PARENT_LEFT);
+	      params.width=100;
+	      b1.setLayoutParams(params);
+	      
+ 
+	      
+	      
 	      String root = Environment.getExternalStorageDirectory().toString();
 	        File myDir = new File(root + "/Syndicate");    
 	        myDir.mkdirs();
@@ -73,6 +96,7 @@ public class recogniser extends Activity{
 	        mediaScanIntent.setData(contentUri);
 	        getApplicationContext().sendBroadcast(mediaScanIntent);
 	   }
+	}
 	   
 	   @Override
 	   protected void onDestroy() {
@@ -82,11 +106,12 @@ public class recogniser extends Activity{
 	   @Override
 	    public void onBackPressed()
 	    {
-	       super.onBackPressed();
+		   super.onBackPressed();
 	    }
 	   
-	   @Override
+	 /*  @Override
 	   public boolean onCreateOptionsMenu(Menu menu) {
+		   
 	      getMenuInflater().inflate(R.menu.main, menu);
 	      return true;
 	   }
@@ -101,6 +126,6 @@ public class recogniser extends Activity{
 	         return true;
 	      }
 	      return super.onOptionsItemSelected(item);
-	   }
+	   } */
 		
 }
